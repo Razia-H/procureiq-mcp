@@ -1,0 +1,10 @@
+
+.env
+.env.txt
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.log
+claude_desktop_config.json
