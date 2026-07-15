@@ -1,0 +1,18 @@
+mcp[cli]>=1.2.0
+python-dotenv>=1.0.1
+pydantic>=2.6.0
+
+# Database & vector search
+supabase>=2.4.0
+pinecone>=5.0.0
+
+# LLM & embeddings
+groq>=0.11.0
+google-generativeai>=0.8.0
+langchain-google-genai>=1.0.10
+langchain-groq>=0.2.0
+langchain-core>=0.3.0
+langgraph>=0.2.0
+
+# News search
+duckduckgo-search>=6.2.0

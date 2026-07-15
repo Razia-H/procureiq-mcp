@@ -1,5 +1,9 @@
 # ProcureIQ MCP Server
 
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Status](https://img.shields.io/badge/status-active--development-yellow)
+
 An MCP (Model Context Protocol) server that connects Claude Desktop to enterprise vendor intelligence data. Ask Claude natural language questions about vendor risk, compliance, and contracts — and get answers backed by real data.
 
 ---
@@ -134,15 +138,10 @@ pip install -r requirements.txt
 
 ### Environment Variables
 
-Create a `.env` file:
+Copy the example file and fill in your keys:
 
-```env
-GROQ_API_KEY=your_groq_key
-PINECONE_API_KEY=your_pinecone_key
-PINECONE_INDEX_NAME=vendor-profiles
-GEMINI_API_KEY=your_gemini_key
-SUPABASE_URL=your_supabase_url
-SUPABASE_KEY=your_supabase_key
+```bash
+cp .env.example .env
 ```
 
 ### Seed the database
@@ -188,6 +187,26 @@ Restart Claude Desktop. The server connects automatically.
 "List all High risk vendors with contracts over $50,000"
 "Has the risk changed recently for SecureNet Systems?"
 ```
+
+---
+
+## Testing
+
+```bash
+pytest
+```
+
+Test suite in progress — see [issues](https://github.com/Razia-H/procureiq-mcp/issues) for coverage roadmap.
+
+---
+
+## Roadmap
+
+- [x] Core 6 tools (profile, search, news, regulatory, contracts, risk delta)
+- [ ] `vendor_generate_report` — executive-ready markdown/PDF risk summaries
+- [ ] Automated test suite (pytest)
+- [ ] CI pipeline (GitHub Actions)
+- [ ] Demo recording
 
 ---
 
