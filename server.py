@@ -16,6 +16,7 @@ from tools.vendor_news import VendorNewsInput, vendor_get_news
 from tools.vendor_contracts import VendorContractsInput, vendor_list_contracts
 from tools.vendor_regulatory import VendorRegulatoryInput, vendor_check_regulatory
 from tools.vendor_risk_delta import VendorRiskDeltaInput, vendor_analyze_risk_delta
+from tools.vendor_generate_report import VendorGenerateReportInput, vendor_generate_report
 
 mcp = FastMCP("procureiq_mcp")
 
@@ -251,6 +252,48 @@ async def tool_vendor_analyze_risk_delta(
         response_format=response_format
     )
     return await vendor_analyze_risk_delta(params)
+
+
+# ─────────────────────────────────────────────
+# Tool 7: vendor_generate_report
+# ─────────────────────────────────────────────
+@mcp.tool(
+    name="vendor_generate_report",
+    annotations={
+        "title": "Generate Executive Vendor Risk Report",
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": False,
+        "openWorldHint": True
+    }
+)
+async def tool_vendor_generate_report(
+    vendor_name: str,
+    include_news: bool = True,
+    include_regulatory: bool = True,
+    response_format: str = "markdown"
+) -> str:
+    """
+    Generate an executive-ready risk report for a vendor, combining
+    the stored profile with recent news signal and regulatory
+    compliance status into one shareable summary.
+
+    Args:
+        vendor_name: Name of the vendor to report on (e.g. 'DataBridge Ltd')
+        include_news: Whether to include a recent news / risk signal section (default True)
+        include_regulatory: Whether to include a regulatory compliance section (default True)
+        response_format: Output format - 'markdown' or 'json'
+
+    Returns:
+        Executive risk report combining profile, news signal, and compliance status
+    """
+    params = VendorGenerateReportInput(
+        vendor_name=vendor_name,
+        include_news=include_news,
+        include_regulatory=include_regulatory,
+        response_format=response_format
+    )
+    return await vendor_generate_report(params)
 
 
 # ─────────────────────────────────────────────
