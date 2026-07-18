@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Status](https://img.shields.io/badge/status-active--development-yellow)
+![Tests](https://github.com/Razia-H/procureiq-mcp/actions/workflows/tests.yml/badge.svg)
 
 An MCP (Model Context Protocol) server that connects Claude Desktop to enterprise vendor intelligence data. Ask Claude natural language questions about vendor risk, compliance, and contracts — and get answers backed by real data.
 
@@ -203,9 +203,9 @@ Test suite in progress — see [issues](https://github.com/Razia-H/procureiq-mcp
 ## Roadmap
 
 - [x] Core 6 tools (profile, search, news, regulatory, contracts, risk delta)
-- [ ] `vendor_generate_report` — executive-ready markdown/PDF risk summaries
-- [ ] Automated test suite (pytest)
-- [ ] CI pipeline (GitHub Actions)
+- [x] `vendor_generate_report` — executive-ready markdown/PDF risk summaries
+- [x] Automated test suite (pytest, 35 tests, 100% tool coverage)
+- [x] CI pipeline (GitHub Actions, runs on every push/PR)
 - [ ] Demo recording
 
 ---
